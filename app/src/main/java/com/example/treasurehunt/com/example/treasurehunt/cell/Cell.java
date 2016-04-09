@@ -1,10 +1,15 @@
-package com.example.treasurehunt;
+package com.example.treasurehunt.com.example.treasurehunt.cell;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.Button;
+
+import com.example.treasurehunt.R;
+import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.CellCondition;
+import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.CellStateTransition;
+import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.CellStateTransitionHandle;
 
 import java.util.Random;
 
@@ -13,15 +18,14 @@ import java.util.Random;
  * @author group 8
  */
 
-public class Cell extends Button {
-    /*
-     * Properties
-     */
-    private boolean isTrapped; // The cell is trap or not
-    private boolean isTreasure; // The cell is treasure or not
+public class Cell extends Button implements CellStateTransitionHandle {
+    private static final int[] resourceIds = new int[] {R.drawable.c1, R.drawable.c2, R.drawable.c3, R.drawable.c4, R.drawable.c5, R.drawable.c6, R.drawable.c7, R.drawable.c8};
+
+    private CellStatus cellStatus;
+    private CellCondition cellCondition;
+    private CellStateTransition cellState;
     private boolean isFlagged; // The cell is flag
     private boolean isDoubt; // The cell is marked as doubt
-    private boolean isCovered; // is cell covered yet
     private boolean isClickable; // can cell accept click events
     private int numberOfTrapInSurrounding; // number of traps in nearby cells
 
@@ -62,19 +66,17 @@ public class Cell extends Button {
      * @param
      */
     public void setDefaults() {
-        isCovered = true;
-        isTrapped = false;
+        cellCondition = CellCondition.COVER;
+        cellStatus = CellStatus.NONE;
         isFlagged = false;
         isDoubt = false;
         isClickable = true;
         numberOfTrapInSurrounding = 0;
 
-        Random r = new Random();
-        switch (r.nextInt() % 2) {
+        switch (new Random().nextInt() % 2) {
             case 0:
                 this.setBackgroundResource(R.drawable.cell1);
                 break;
-
             case 1:
                 this.setBackgroundResource(R.drawable.cell2);
                 break;
@@ -83,7 +85,6 @@ public class Cell extends Button {
                 break;
         }
 
-        // this.setBackgroundResource(R.drawable.square_blue);
         setBoldFont();
     }
 
@@ -95,7 +96,7 @@ public class Cell extends Button {
      * @param
      */
     public boolean isCovered() {
-        return isCovered;
+        return cellCondition == CellCondition.COVER;
     }
 
     /*
@@ -106,7 +107,7 @@ public class Cell extends Button {
      * @param
      */
     public boolean hasTreasure() {
-        return isTreasure;
+        return cellStatus == CellStatus.TREASURE;
     }
 
     /*
@@ -117,7 +118,7 @@ public class Cell extends Button {
      * @param
      */
     public boolean hasTrap() {
-        return isTrapped;
+        return cellStatus == CellStatus.TRAP;
     }
 
     /*
@@ -319,7 +320,7 @@ public class Cell extends Button {
      * @param
      */
     public void setTreasure() {
-        isTreasure = true;
+        cellStatus = CellStatus.TREASURE;
     }
 
     /*
@@ -330,7 +331,7 @@ public class Cell extends Button {
      * @param
      */
     public void setTrap() {
-        isTrapped = true;
+        cellStatus = CellStatus.TRAP;
     }
 
     /*
@@ -340,8 +341,7 @@ public class Cell extends Button {
      *
      * @param
      */
-    private void setBoldFont() // Delete later
-    {
+    private void setBoldFont() {
         this.setTypeface(null, Typeface.BOLD);
     }
 
@@ -353,25 +353,21 @@ public class Cell extends Button {
      * @param
      */
     public void OpenCell() {
-        // cannot uncover a trap which is not covered
-        if (!isCovered)
+        if (cellCondition == CellCondition.OPEN)
             return;
 
-        // setCellAsDisabled(false);
-        isCovered = false;
-
+        cellCondition = CellCondition.OPEN;
         if (this.numberOfTrapInSurrounding == 0) {
             isClickable = false;
         }
 
-        // check if it has trap
         if (hasTrap()) {
             setTrapIcon(false);
+            return;
         }
+
         // update with the nearby trap count
-        else {
-            setNumberOfSurroundingTraps(numberOfTrapInSurrounding);
-        }
+        setNumberOfSurroundingTraps(numberOfTrapInSurrounding);
     }
 
     /*
@@ -381,50 +377,9 @@ public class Cell extends Button {
      *
      * @param text number of trap surrounding
      */
-    public void updateNumber(int text) {
-        if (text != 0) {
-            // this.setText(Integer.toString(text));
-
-            // select different color for each number
-            // we have 1 - 8 trap count
-            switch (text) {
-                case 1:
-                    this.setBackgroundResource(R.drawable.c1);
-                    // this.setTextColor(Color.BLUE);
-                    break;
-                case 2:
-                    this.setBackgroundResource(R.drawable.c2);
-                    // this.setTextColor(Color.rgb(0, 100, 0));
-                    break;
-                case 3:
-                    this.setBackgroundResource(R.drawable.c3);
-                    // this.setTextColor(Color.RED);
-                    break;
-                case 4:
-                    this.setBackgroundResource(R.drawable.c4);
-                    // this.setTextColor(Color.rgb(85, 26, 139));
-                    break;
-                case 5:
-                    this.setBackgroundResource(R.drawable.c5);
-                    // this.setTextColor(Color.rgb(139, 28, 98));
-                    break;
-                case 6:
-                    this.setBackgroundResource(R.drawable.c6);
-                    // this.setTextColor(Color.rgb(238, 173, 14));
-                    break;
-                case 7:
-                    this.setBackgroundResource(R.drawable.c7);
-                    // this.setTextColor(Color.rgb(47, 79, 79));
-                    break;
-                case 8:
-                    this.setBackgroundResource(R.drawable.c8);
-                    // this.setTextColor(Color.rgb(71, 71, 71));
-                    break;
-                case 9:
-                    // this.setBackgroundResource(R.drawable.empty);
-                    // this.setTextColor(Color.rgb(205, 205, 0));
-                    break;
-            }
+    protected void updateNumber(int resourceId) {
+        if (resourceId > 0 || resourceId < 9) {
+            setBackgroundResource(resourceIds[resourceId - 1]);
         }
     }
 
@@ -436,9 +391,7 @@ public class Cell extends Button {
      * @param
      */
     public void triggerTrap() {
-        // TODO: add more effect
         setTrapIcon(true);
-        // this.setTextColor(Color.RED);
     }
 
     /*
@@ -468,10 +421,20 @@ public class Cell extends Button {
      */
     @Override
     public String toString() {
-        if (this.isTrapped) {
-            return "This is a trap " + numberOfTrapInSurrounding;
+        if (hasTrap()) {
+            return String.format("This is a trap %s", numberOfTrapInSurrounding);
         } else {
-            return "This is not a trap " + numberOfTrapInSurrounding;
+            return String.format("This is not a trap %s", numberOfTrapInSurrounding);
         }
+    }
+
+    @Override
+    public void setCellState(CellStateTransition cellState) {
+        this.cellState = cellState;
+    }
+
+    @Override
+    public void onCellClick() {
+        this.cellState.nextState(this);
     }
 }

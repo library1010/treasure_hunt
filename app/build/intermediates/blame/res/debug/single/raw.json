@@ -1,10 +1,10 @@
 [
-  {
-    "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/raw/sound1.mp3",
-    "source": "/Users/library/StudioProjects/team08/app/src/main/res/raw/sound1.mp3"
-  },
-  {
-    "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/raw/flag.mp3",
-    "source": "/Users/library/StudioProjects/team08/app/src/main/res/raw/flag.mp3"
-  }
+    {
+        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/raw/sound1.mp3",
+        "source": "/Users/library/StudioProjects/team08/app/src/main/res/raw/sound1.mp3"
+    },
+    {
+        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/raw/flag.mp3",
+        "source": "/Users/library/StudioProjects/team08/app/src/main/res/raw/flag.mp3"
+    }
 ]

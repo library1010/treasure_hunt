@@ -27,6 +27,8 @@ import android.widget.TableRow.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.treasurehunt.com.example.treasurehunt.cell.Cell;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
