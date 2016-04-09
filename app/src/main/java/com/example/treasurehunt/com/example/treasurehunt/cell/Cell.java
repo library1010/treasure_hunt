@@ -7,12 +7,13 @@ import android.util.AttributeSet;
 import android.widget.Button;
 
 import com.example.treasurehunt.R;
-import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.CellCondition;
+import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.definition.CellCondition;
 import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.CellStateTransition;
 import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.CellStateTransitionHandle;
 import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.DoubtCellState;
 import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.FlagCellState;
 import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.NormalCellState;
+import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.definition.CellStatus;
 
 import java.util.Random;
 

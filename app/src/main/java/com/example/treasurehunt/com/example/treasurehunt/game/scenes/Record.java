@@ -1,4 +1,4 @@
-package com.example.treasurehunt;
+package com.example.treasurehunt.com.example.treasurehunt.game.scenes;
 
 /*
  * Class Score
@@ -13,6 +13,9 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
+
+import com.example.treasurehunt.R;
+import com.example.treasurehunt.com.example.treasurehunt.game.scenes.Game;
 
 public class Record extends Activity {
 

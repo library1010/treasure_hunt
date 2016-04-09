@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.treasurehunt.MainMenu"
+            android:name=".com.example.treasurehunt.game.scenes.MainMenu"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
@@ -28,22 +28,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.treasurehunt.Game"
+            android:name=".com.example.treasurehunt.game.scenes.Game"
             android:label="@string/title_activity_game"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
-            android:name="com.example.treasurehunt.Quiz"
+            android:name=".com.example.treasurehunt.game.scenes.Quiz"
             android:label="@string/title_activity_game"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
         <activity
-            android:name="com.example.treasurehunt.Record"
+            android:name=".com.example.treasurehunt.game.scenes.Record"
             android:label="@string/title_activity_game"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
         <activity
-            android:name="com.example.treasurehunt.Instruction"
+            android:name=".com.example.treasurehunt.game.scenes.Instruction"
             android:label="@string/title_activity_game"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>

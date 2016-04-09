@@ -1,4 +1,4 @@
-package com.example.treasurehunt;
+package com.example.treasurehunt.com.example.treasurehunt.game.scenes;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,6 +27,8 @@ import android.widget.TableRow.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.treasurehunt.R;
+import com.example.treasurehunt.Score;
 import com.example.treasurehunt.com.example.treasurehunt.cell.Cell;
 
 import java.util.ArrayList;

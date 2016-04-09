@@ -1,4 +1,4 @@
-package com.example.treasurehunt;
+package com.example.treasurehunt.com.example.treasurehunt.game.scenes;
 
 /*
  * Class Instruction
@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.example.treasurehunt.R;
 
 public class Instruction extends Activity implements OnClickListener {
 

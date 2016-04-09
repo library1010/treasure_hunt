@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gamebg"
-    tools:context=".Game">
+    tools:context=".com.example.treasurehunt.game.scenes.Game">
 
     <ImageView
         android:layout_width="90dp"
