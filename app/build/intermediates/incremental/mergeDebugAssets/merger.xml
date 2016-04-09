@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3">
+    <dataSet config="main">
+        <source path="/Users/library/StudioProjects/team08/app/src/main/assets">
+            <file name="fonts/FRANCHISE-BOLD.TTF"
+                path="/Users/library/StudioProjects/team08/app/src/main/assets/fonts/FRANCHISE-BOLD.TTF" />
+            <file name="fonts/Sketch_Block.ttf"
+                path="/Users/library/StudioProjects/team08/app/src/main/assets/fonts/Sketch_Block.ttf" />
+            <file name="so.fnt"
+                path="/Users/library/StudioProjects/team08/app/src/main/assets/so.fnt" />
+            <file name="so.png"
+                path="/Users/library/StudioProjects/team08/app/src/main/assets/so.png" />
+        </source>
+    </dataSet>
+    <dataSet config="debug">
+        <source path="/Users/library/StudioProjects/team08/app/src/debug/assets" />
+    </dataSet>
+</merger>

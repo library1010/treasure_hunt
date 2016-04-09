@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gamebg"
+    tools:context=".Game">
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/traptext" />
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="350dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/scoretext" />
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="750dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/timetext" />
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="910dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/livestext" />
+
+    <TextView
+        android:id="@+id/trapText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="40dp"
+        android:text="8"
+        android:textColor="@android:color/white"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/levelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:text="8"
+        android:textColor="@android:color/white"
+        android:textSize="29sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="440dp"
+        android:layout_marginTop="40dp"
+        android:text="1234"
+        android:textColor="@android:color/white"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="840dp"
+        android:layout_marginTop="40dp"
+        android:textColor="@android:color/white"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/livesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="1000dp"
+        android:layout_marginTop="40dp"
+        android:text="3"
+        android:textColor="@android:color/white"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:id="@+id/Map"
+        android:layout_width="1200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:layout_span="3"
+        android:gravity="bottom"
+        android:padding="5dp"
+        android:stretchColumns="*"></TableLayout>
+
+    <ImageView
+        android:id="@+id/img_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/trapped"
+        android:visibility="gone" />
+
+</RelativeLayout>

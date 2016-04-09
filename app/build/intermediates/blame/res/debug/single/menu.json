@@ -1,0 +1,10 @@
+[
+  {
+    "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/menu/main_menu.xml",
+    "source": "/Users/library/StudioProjects/team08/app/src/main/res/menu/main_menu.xml"
+  },
+  {
+    "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/menu/game.xml",
+    "source": "/Users/library/StudioProjects/team08/app/src/main/res/menu/game.xml"
+  }
+]

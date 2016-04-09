@@ -1,0 +1,73 @@
+<!-- @author 8-B Pham Hung Cuong -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context=".MainMenu">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        android:background="@drawable/treasurechest" />
+
+    <ImageView
+        android:layout_width="420dp"
+        android:layout_height="110dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/treasurehunt" />
+
+    <Button
+        android:id="@+id/instructionBtn"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="540dp"
+        android:background="@drawable/instructionbg"
+        android:onClick="onClick" />
+
+    <Button
+        android:id="@+id/continueBtn"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="440dp"
+        android:background="@drawable/continuebg"
+        android:onClick="onClick" />
+
+    <Button
+        android:id="@+id/newGameBtn"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="340dp"
+        android:background="@drawable/newgamebg"
+        android:onClick="onClick" />
+
+    <Button
+        android:id="@+id/recordBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="260dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/record"
+        android:onClick="onClick" />
+
+    <Button
+        android:id="@+id/settingBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="180dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/sound"
+        android:onClick="onClick" />
+
+</RelativeLayout>

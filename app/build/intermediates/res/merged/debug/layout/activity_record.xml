@@ -1,0 +1,35 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="fill_parent"
+    android:background="@drawable/background1" android:padding="10dp">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView android:id="@+id/intro" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp" android:text="LEADERBOARD" android:textColor="#ff2a00"
+            android:textSize="26sp" />
+
+        <TextView android:id="@+id/player_name" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginLeft="400dp"
+            android:layout_marginTop="160dp" android:text="Player name" android:textColor="#038afd"
+            android:textSize="24sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/score_record" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginLeft="650dp"
+            android:layout_marginTop="160dp" android:text="Score" android:textColor="#038afd"
+            android:textSize="24sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/level_record" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginLeft="770dp"
+            android:layout_marginTop="160dp" android:text="Level" android:textColor="#038afd"
+            android:textSize="24sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/high_scores_list" android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_below="@id/level_record"
+            android:layout_centerHorizontal="true" android:gravity="center" android:padding="10dp"
+            android:textColor="#038afd" android:textSize="22sp" android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</ScrollView>

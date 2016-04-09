@@ -1,0 +1,26 @@
+[
+  {
+    "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/layout/finish_popup.xml",
+    "source": "/Users/library/StudioProjects/team08/app/src/main/res/layout/finish_popup.xml"
+  },
+  {
+    "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/layout/activity_instruction.xml",
+    "source": "/Users/library/StudioProjects/team08/app/src/main/res/layout/activity_instruction.xml"
+  },
+  {
+    "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/layout/activity_record.xml",
+    "source": "/Users/library/StudioProjects/team08/app/src/main/res/layout/activity_record.xml"
+  },
+  {
+    "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/layout/activity_main_menu.xml",
+    "source": "/Users/library/StudioProjects/team08/app/src/main/res/layout/activity_main_menu.xml"
+  },
+  {
+    "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/layout/win_popup.xml",
+    "source": "/Users/library/StudioProjects/team08/app/src/main/res/layout/win_popup.xml"
+  },
+  {
+    "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/layout/activity_game.xml",
+    "source": "/Users/library/StudioProjects/team08/app/src/main/res/layout/activity_game.xml"
+  }
+]

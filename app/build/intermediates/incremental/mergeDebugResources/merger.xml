@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3">
+    <dataSet config="main$Generated" generated="true">
+        <source path="/Users/library/StudioProjects/team08/app/src/main/res" />
+        <source path="/Users/library/StudioProjects/team08/app/build/generated/res/rs/debug" />
+        <source
+            path="/Users/library/StudioProjects/team08/app/build/generated/res/resValues/debug" />
+    </dataSet>
+    <dataSet config="debug$Generated" generated="true">
+        <source path="/Users/library/StudioProjects/team08/app/src/debug/res" />
+    </dataSet>
+    <dataSet config="main" generated-set="main$Generated">
+        <source path="/Users/library/StudioProjects/team08/app/src/main/res">
+            <file name="background1"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/background1.jpg"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="c1"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/c1.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="c2"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/c2.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="c3"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/c3.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="c4"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/c4.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="c5"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/c5.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="c6"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/c6.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="c7"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/c7.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="c8"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/c8.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="cell1"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/cell1.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="cell2"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/cell2.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="clockicon"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/clockicon.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="congrat"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/congrat.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="continue_button"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/continue_button.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="continue_click"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/continue_click.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="continuebg"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/continuebg.xml"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="doubt"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/doubt.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="empty"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/empty.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="flag"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/flag.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="gamebg"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/gamebg.jpg"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="guide"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/guide.jpg"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="ic_launcher"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/ic_launcher.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="instruction"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/instruction.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="instruction_click"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/instruction_click.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="instructionbg"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/instructionbg.xml"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="leveltext"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/leveltext.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="livestext"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/livestext.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="loadgame"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/loadgame.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="loadgamebg"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/loadgamebg.xml"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="mute"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/mute.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="newgame"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/newgame.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="newgame_click"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/newgame_click.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="newgamebg"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/newgamebg.xml"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="nextlevel"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/nextlevel.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="pause"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/pause.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="popupbg"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/popupbg.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="quittomenu"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/quittomenu.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="ranking"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/ranking.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="rankingbg"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/rankingbg.xml"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="record"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/record.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="recordbg"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/recordbg.xml"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="saverecord"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/saverecord.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="scoretext"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/scoretext.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="sharefb"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/sharefb.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="sharescore"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/sharescore.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="sound"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/sound.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="square_blue"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/square_blue.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="square_grey"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/square_grey.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="timeout"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/timeout.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="timetext"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/timetext.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="trap"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/trap.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="trap_fail"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/trap_fail.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="trapped"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/trapped.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="traptext"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/traptext.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="treasure"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/treasure.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="treasurechest"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/treasurechest.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="treasurechest1"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/treasurechest1.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="treasurehunt"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/treasurehunt.png"
+                qualifiers="hdpi-v4" type="drawable" />
+            <file name="ic_launcher"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-mdpi/ic_launcher.png"
+                qualifiers="mdpi-v4" type="drawable" />
+            <file name="ic_launcher"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+                qualifiers="xhdpi-v4" type="drawable" />
+            <file name="ic_launcher"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi-v4" type="drawable" />
+            <file name="activity_game"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/layout/activity_game.xml"
+                qualifiers="" type="layout" />
+            <file name="activity_instruction"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/layout/activity_instruction.xml"
+                qualifiers="" type="layout" />
+            <file name="activity_main_menu"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/layout/activity_main_menu.xml"
+                qualifiers="" type="layout" />
+            <file name="activity_record"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/layout/activity_record.xml"
+                qualifiers="" type="layout" />
+            <file name="finish_popup"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/layout/finish_popup.xml"
+                qualifiers="" type="layout" />
+            <file name="win_popup"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/layout/win_popup.xml"
+                qualifiers="" type="layout" />
+            <file name="game"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/menu/game.xml"
+                qualifiers="" type="menu" />
+            <file name="main_menu"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/menu/main_menu.xml"
+                qualifiers="" type="menu" />
+            <file name="flag"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/raw/flag.mp3"
+                qualifiers="" type="raw" />
+            <file name="sound1"
+                path="/Users/library/StudioProjects/team08/app/src/main/res/raw/sound1.mp3"
+                qualifiers="" type="raw" />
+            <file path="/Users/library/StudioProjects/team08/app/src/main/res/values/dimens.xml"
+                qualifiers="">
+                <dimen name="activity_vertical_margin">16dp</dimen>
+                <dimen name="activity_horizontal_margin">16dp</dimen>
+            </file>
+            <file path="/Users/library/StudioProjects/team08/app/src/main/res/values/strings.xml"
+                qualifiers="">
+                <string name="hello_world">Hello world!</string>
+                <string name="action_settings">Settings</string>
+                <string name="app_name">TreasureHunt</string>
+                <string name="title_activity_game">Game</string>
+            </file>
+            <file path="/Users/library/StudioProjects/team08/app/src/main/res/values/styles.xml"
+                qualifiers="">
+                <style name="AppTheme" parent="AppBaseTheme">
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                </style>
+                <style name="AppBaseTheme" parent="android:Theme.Light">
+                    <!--
+                        Theme customizations available in newer API levels can go in
+                        res/values-vXX/styles.xml, while customizations related to
+                        backward-compatibility can go here.
+                    -->
+                </style>
+            </file>
+            <file
+                path="/Users/library/StudioProjects/team08/app/src/main/res/values-sw720dp-land/dimens.xml"
+                qualifiers="sw720dp-land-v13">
+                <dimen name="activity_horizontal_margin">128dp</dimen>
+            </file>
+            <file path="/Users/library/StudioProjects/team08/app/src/main/res/values-v11/styles.xml"
+                qualifiers="v11">
+                <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+                    <!-- API 11 theme customizations can go here. -->
+                </style>
+            </file>
+            <file path="/Users/library/StudioProjects/team08/app/src/main/res/values-v14/styles.xml"
+                qualifiers="v14">
+                <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+                    <!-- API 14 theme customizations can go here. -->
+                </style>
+            </file>
+        </source>
+        <source path="/Users/library/StudioProjects/team08/app/build/generated/res/rs/debug" />
+        <source
+            path="/Users/library/StudioProjects/team08/app/build/generated/res/resValues/debug" />
+    </dataSet>
+    <dataSet config="debug" generated-set="debug$Generated">
+        <source path="/Users/library/StudioProjects/team08/app/src/debug/res" />
+    </dataSet>
+    <mergedItems />
+</merger>
