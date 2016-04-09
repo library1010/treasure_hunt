@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/guide.jpg",
-        "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/guide.jpg"
-    },
-    {
         "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/mute.png",
         "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/mute.png"
+    },
+    {
+        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/guide.jpg",
+        "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/guide.jpg"
     },
     {
         "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/treasurechest.png",
@@ -24,12 +24,12 @@
         "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/ranking.png"
     },
     {
-        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/trap.png",
-        "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/trap.png"
-    },
-    {
         "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/flag.png",
         "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/flag.png"
+    },
+    {
+        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/trap.png",
+        "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/trap.png"
     },
     {
         "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/c2.png",
@@ -48,20 +48,20 @@
         "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/timetext.png"
     },
     {
-        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/newgame_click.png",
-        "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/newgame_click.png"
-    },
-    {
-        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/clockicon.png",
-        "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/clockicon.png"
+        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/leveltext.png",
+        "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/leveltext.png"
     },
     {
         "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/sharefb.png",
         "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/sharefb.png"
     },
     {
-        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/leveltext.png",
-        "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/leveltext.png"
+        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/clockicon.png",
+        "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/clockicon.png"
+    },
+    {
+        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/newgame_click.png",
+        "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/newgame_click.png"
     },
     {
         "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/continue_click.png",
@@ -152,6 +152,10 @@
         "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/instructionbg.xml"
     },
     {
+        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/common_full_open_on_phone.png",
+        "source": "/Users/library/StudioProjects/team08/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/res/drawable-hdpi/common_full_open_on_phone.png"
+    },
+    {
         "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/treasurehunt.png",
         "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/treasurehunt.png"
     },
@@ -162,6 +166,10 @@
     {
         "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/continue_button.png",
         "source": "/Users/library/StudioProjects/team08/app/src/main/res/drawable-hdpi/continue_button.png"
+    },
+    {
+        "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/common_ic_googleplayservices.png",
+        "source": "/Users/library/StudioProjects/team08/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/res/drawable-hdpi/common_ic_googleplayservices.png"
     },
     {
         "merged": "/Users/library/StudioProjects/team08/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/treasure.png",

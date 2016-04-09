@@ -10,6 +10,9 @@ import com.example.treasurehunt.R;
 import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.CellCondition;
 import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.CellStateTransition;
 import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.CellStateTransitionHandle;
+import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.DoubtCellState;
+import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.FlagCellState;
+import com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treasurehunt.cell.state.NormalCellState;
 
 import java.util.Random;
 
@@ -19,15 +22,16 @@ import java.util.Random;
  */
 
 public class Cell extends Button implements CellStateTransitionHandle {
-    private static final int[] resourceIds = new int[] {R.drawable.c1, R.drawable.c2, R.drawable.c3, R.drawable.c4, R.drawable.c5, R.drawable.c6, R.drawable.c7, R.drawable.c8};
+    private static final int[] resourceIds = new int[]{R.drawable.c1, R.drawable.c2, R.drawable.c3, R.drawable.c4, R.drawable.c5, R.drawable.c6, R.drawable.c7, R.drawable.c8};
 
     private CellStatus cellStatus;
     private CellCondition cellCondition;
     private CellStateTransition cellState;
-    private boolean isFlagged; // The cell is flag
-    private boolean isDoubt; // The cell is marked as doubt
-    private boolean isClickable; // can cell accept click events
-    private int numberOfTrapInSurrounding; // number of traps in nearby cells
+
+    /**
+     * Number of traps in the nearby cells
+     */
+    private int surroundTraps;
 
     /*
      * Constructor
@@ -38,6 +42,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
      */
     public Cell(Context context) {
         super(context);
+        setDefaults();
     }
 
     /*
@@ -47,6 +52,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
      */
     public Cell(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setDefaults();
     }
 
     /*
@@ -56,6 +62,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
      */
     public Cell(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        setDefaults();
     }
 
     /*
@@ -65,27 +72,19 @@ public class Cell extends Button implements CellStateTransitionHandle {
      *
      * @param
      */
-    public void setDefaults() {
+    private void setDefaults() {
         cellCondition = CellCondition.COVER;
         cellStatus = CellStatus.NONE;
-        isFlagged = false;
-        isDoubt = false;
-        isClickable = true;
-        numberOfTrapInSurrounding = 0;
+        cellState = new NormalCellState();
+        surroundTraps = 0;
 
-        switch (new Random().nextInt() % 2) {
-            case 0:
-                this.setBackgroundResource(R.drawable.cell1);
-                break;
-            case 1:
-                this.setBackgroundResource(R.drawable.cell2);
-                break;
-            default:
-                this.setBackgroundResource(R.drawable.cell1);
-                break;
+        if (new Random().nextInt() % 2 == 1) {
+            this.setBackgroundResource(R.drawable.cell2);
+        } else {
+            this.setBackgroundResource(R.drawable.cell1);
         }
 
-        setBoldFont();
+        this.setTypeface(null, Typeface.BOLD);
     }
 
     /*
@@ -129,7 +128,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
      * @param
      */
     public boolean isFlagged() {
-        return isFlagged;
+        return cellState.isFlagged();
     }
 
     /*
@@ -140,7 +139,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
      * @param
      */
     public boolean isDoubted() {
-        return isDoubt;
+        return cellState.isDoubt();
     }
 
     /*
@@ -151,7 +150,8 @@ public class Cell extends Button implements CellStateTransitionHandle {
      * @param
      */
     public boolean isClickable() {
-        return isClickable;
+        return cellCondition == CellCondition.COVER
+                || (cellCondition == CellCondition.OPEN && surroundTraps != 0);
     }
 
     /*
@@ -161,11 +161,8 @@ public class Cell extends Button implements CellStateTransitionHandle {
      *
      * @param flagged boolean variable
      */
-    public void setFlag(boolean flagged) {
-        isFlagged = flagged;
-        if (isFlagged) {
-            isClickable = true;
-        }
+    public void setFlag() {
+        cellState = new FlagCellState();
     }
 
     /*
@@ -175,11 +172,8 @@ public class Cell extends Button implements CellStateTransitionHandle {
      *
      * @param questionMarked boolean variable
      */
-    public void setDoubt(boolean questionMarked) {
-        isDoubt = questionMarked;
-        if (isDoubt) {
-            isClickable = true;
-        }
+    public void setDoubt() {
+        cellState = new DoubtCellState();
     }
 
     /*
@@ -189,8 +183,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
      *
      * @param number number of traps surrounded this cell
      */
-    public void setNumberOfSurroundingTraps(int number) {
-        // this.setBackgroundResource(R.drawable.square_grey);
+    public void setSurroundTraps(int number) {
         this.setBackgroundResource(R.drawable.empty);
         updateNumber(number);
     }
@@ -202,8 +195,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
      *
      * @param enabled boolean variable
      */
-    public void setTreasureIcon(boolean enabled) {
-        // this.setText("T");
+    public void setTreasureIcon() {
         this.setBackgroundResource(R.drawable.treasure);
     }
 
@@ -215,10 +207,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
      * @param enabled boolean variable
      */
     public void setTrapIcon(boolean enabled) {
-        // this.setText("M");
-
         if (!enabled) {
-            // this.setBackgroundResource(R.drawable.square_grey);
             this.setBackgroundResource(R.drawable.trap);
             this.setTextColor(Color.RED);
         } else {
@@ -233,17 +222,8 @@ public class Cell extends Button implements CellStateTransitionHandle {
      *
      * @param enabled boolean variable
      */
-    public void setFlagIcon(boolean enabled) {
-        // this.setText("F");
+    public void setFlagIcon() {
         this.setBackgroundResource(R.drawable.flag);
-
-        // if (!enabled) {
-        // // this.setBackgroundResource(R.drawable.square_grey);
-        // this.setBackgroundResource(R.drawable.flag);
-        // this.setTextColor(Color.RED);
-        // } else {
-        // this.setTextColor(Color.BLACK);
-        // }
     }
 
     /*
@@ -254,8 +234,6 @@ public class Cell extends Button implements CellStateTransitionHandle {
      * @param enabled boolean variable
      */
     public void setDoubtIcon(boolean enabled) {
-        // this.setText("?");
-        // this.setBackgroundResource(R.drawable.square_blue);
         this.setBackgroundResource(R.drawable.doubt);
 
         if (!enabled) {
@@ -271,27 +249,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
      * @author 8A Tran Trong Viet
      */
     public void clearAllIcons() {
-        // this.setText("");
         this.setBackgroundResource(R.drawable.cell1);
-    }
-
-    /*
-     * Set cell as disabled/opened if false is passed else enable/close it
-     *
-     * @author 8A Tran Trong Viet
-     *
-     * @param enabled boolean variable
-     */
-    public void setCellAsDisabled(boolean enabled) {
-        if (!enabled) {
-            // this.setBackgroundResource(R.drawable.square_grey);
-            this.setBackgroundResource(R.drawable.empty);
-
-        } else {
-            // this.setBackgroundResource(R.drawable.square_blue);
-            // this.setBackgroundResource(R.drawable.empty);
-        }
-
     }
 
     /*
@@ -300,16 +258,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
      * @author 8C Pham Duy Hung
      */
     public void disableCell() {
-        isClickable = false;
-    }
-
-    /*
-     * Enable this cell
-     *
-     * @author 8C Pham Duy Hung
-     */
-    public void enableCell() {
-        isClickable = false;
+        cellCondition = CellCondition.END_GAME;
     }
 
     /*
@@ -335,17 +284,6 @@ public class Cell extends Button implements CellStateTransitionHandle {
     }
 
     /*
-     * Set font as bold
-     *
-     * @author 8A Tran Trong Viet
-     *
-     * @param
-     */
-    private void setBoldFont() {
-        this.setTypeface(null, Typeface.BOLD);
-    }
-
-    /*
      * Uncover this cell
      *
      * @author 8A Tran Trong Viet
@@ -353,13 +291,10 @@ public class Cell extends Button implements CellStateTransitionHandle {
      * @param
      */
     public void OpenCell() {
-        if (cellCondition == CellCondition.OPEN)
+        if (cellCondition != CellCondition.COVER)
             return;
 
         cellCondition = CellCondition.OPEN;
-        if (this.numberOfTrapInSurrounding == 0) {
-            isClickable = false;
-        }
 
         if (hasTrap()) {
             setTrapIcon(false);
@@ -367,7 +302,7 @@ public class Cell extends Button implements CellStateTransitionHandle {
         }
 
         // update with the nearby trap count
-        setNumberOfSurroundingTraps(numberOfTrapInSurrounding);
+        setSurroundTraps(surroundTraps);
     }
 
     /*
@@ -401,17 +336,8 @@ public class Cell extends Button implements CellStateTransitionHandle {
      *
      * @param
      */
-    public int getNumberOfTrapsInSurrounding() {
-        return numberOfTrapInSurrounding;
-    }
-
-    /*
-     * Set the numberOfTrapInSurrounding
-     *
-     * @author 8C Pham Duy Hung
-     */
-    public void setNumberOfTrapsInSurrounding(int number) {
-        numberOfTrapInSurrounding = number;
+    public int getSurroundTraps() {
+        return surroundTraps;
     }
 
     /*
@@ -422,10 +348,9 @@ public class Cell extends Button implements CellStateTransitionHandle {
     @Override
     public String toString() {
         if (hasTrap()) {
-            return String.format("This is a trap %s", numberOfTrapInSurrounding);
-        } else {
-            return String.format("This is not a trap %s", numberOfTrapInSurrounding);
+            return String.format("This is a trap %s", surroundTraps);
         }
+        return String.format("This is not a trap %s", surroundTraps);
     }
 
     @Override

@@ -5,7 +5,19 @@ package com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treas
  */
 public interface CellStateTransition {
     /**
+     * @return
+     */
+    boolean isFlagged();
+
+    /**
+     *
+     * @return
+     */
+    boolean isDoubt();
+
+    /**
      * Move the cell to the other state
+     *
      * @param cell
      */
     void nextState(CellStateTransitionHandle cell);

@@ -81,23 +81,22 @@ public class Game extends Activity {
      *
      * @author 8B Pham Hung Cuong
      */
-    private Runnable updateTimeElasped = new Runnable() {
+    private Runnable updateTimeElapsed = new Runnable() {
 
         @Override
         public void run() {
-            // TODO Auto-generated method stub
             long currentMilliseconds = System.currentTimeMillis();
             --timer;
 
             if (!isGameOver) {
-                timeText.setText("" + timer);
+                timeText.setText(timer);
             }
 
             // add notification
             clock.postAtTime(this, currentMilliseconds);
             // notify to call back after 1 seconds
             // basically to remain in the timer loop
-            clock.postDelayed(updateTimeElasped, 1000);
+            clock.postDelayed(updateTimeElapsed, 1000);
 
             if (timer == 0) {
                 finishGame(0, 0);
@@ -340,7 +339,6 @@ public class Game extends Activity {
         for (int row = 0; row < numberOfRows + 2; row++) {
             for (int column = 0; column < numberOfColumns + 2; column++) {
                 cells[row][column] = new Cell(this);
-                cells[row][column].setDefaults();
 
                 final int currentRow = row;
                 final int currentColumn = column;
@@ -400,7 +398,7 @@ public class Game extends Activity {
                 livesText.setText("" + lives);
                 trapText.setText("" + trapsRemain);
                 cells[currentRow][currentColumn].OpenCell();
-                cells[currentRow][currentColumn].setFlag(true);
+                cells[currentRow][currentColumn].setFlag();
                 if (lives <= 0) {
                     finishGame(currentRow, currentColumn);
                     livesText.setText("0");
@@ -426,7 +424,7 @@ public class Game extends Activity {
 
         if (!cells[currentRow][currentColumn].isCovered()
                 && (cells[currentRow][currentColumn]
-                .getNumberOfTrapsInSurrounding() > 0) && !isGameOver) {
+                .getSurroundTraps() > 0) && !isGameOver) {
             int nearbyFlaggedBlocks = 0;
             for (int previousRow = -1; previousRow < 2; previousRow++) {
                 for (int previousColumn = -1; previousColumn < 2; previousColumn++) {
@@ -440,7 +438,7 @@ public class Game extends Activity {
             // if flagged block count is equal to nearby trap count then open
             // nearby blocks
             if (nearbyFlaggedBlocks == cells[currentRow][currentColumn]
-                    .getNumberOfTrapsInSurrounding()) {
+                    .getSurroundTraps()) {
                 for (int previousRow = -1; previousRow < 2; previousRow++) {
                     for (int previousColumn = -1; previousColumn < 2; previousColumn++) {
                         // don't open flagged blocks
@@ -502,31 +500,31 @@ public class Game extends Activity {
             // case 1. set blank block to flagged
             if (!cells[currentRow][currentColumn].isFlagged()
                     && !cells[currentRow][currentColumn].isDoubted()) {
-                cells[currentRow][currentColumn].setFlagIcon(true);
-                cells[currentRow][currentColumn].setFlag(true);
+                cells[currentRow][currentColumn].setFlagIcon();
+                cells[currentRow][currentColumn].setFlag();
                 trapsRemain--; // reduce trap count
                 trapText.setText("" + trapsRemain);
             }
             // case 2. set flagged to question mark
             else if (!cells[currentRow][currentColumn].isDoubted()) {
-                cells[currentRow][currentColumn].setDoubt(true);
-                cells[currentRow][currentColumn].setFlagIcon(false);
+                cells[currentRow][currentColumn].setDoubt();
+                cells[currentRow][currentColumn].setFlagIcon();
                 cells[currentRow][currentColumn].setDoubtIcon(true);
-                cells[currentRow][currentColumn].setFlag(false);
+                cells[currentRow][currentColumn].setFlag();
                 trapsRemain++; // increase trap count
                 trapText.setText("" + trapsRemain);
             }
             // case 3. change to blank square
             else {
                 cells[currentRow][currentColumn].clearAllIcons();
-                cells[currentRow][currentColumn].setDoubt(false);
+                cells[currentRow][currentColumn].setDoubt();
                 // if it is flagged then increment trap count
                 if (cells[currentRow][currentColumn].isFlagged()) {
                     trapsRemain++; // increase trap count
                     trapText.setText("" + trapsRemain);
                 }
                 // remove flagged status
-                cells[currentRow][currentColumn].setFlag(false);
+                cells[currentRow][currentColumn].setFlag();
             }
 
         }
@@ -586,7 +584,7 @@ public class Game extends Activity {
      */
     private void genTreasure(int rowClicked, int columnClicked) {
         Random rand = new Random();
-        int treasureRow = 0, treasureCol = 0;
+        int treasureRow, treasureCol;
 
         // Set the treasure position
         treasureRow = rand.nextInt(numberOfRows - 1) + 2;
@@ -685,13 +683,12 @@ public class Game extends Activity {
                             }
                         }
                     }
-                    cells[row][column]
-                            .setNumberOfTrapsInSurrounding(nearByTrapCount);
+                    cells[row][column].setSurroundTraps(nearByTrapCount);
                 }
                 // for side rows (0th and last row/column)
                 // set count as 9 and mark it as opened
                 else {
-                    cells[row][column].setNumberOfTrapsInSurrounding(9);
+                    cells[row][column].setSurroundTraps(9);
                     cells[row][column].OpenCell();
                 }
 
@@ -714,7 +711,7 @@ public class Game extends Activity {
      */
     private boolean isNearTheClickedCell(int rowCheck, int columnCheck,
                                          int rowClicked, int columnClicked) {
-        if (((rowCheck != columnClicked) || (columnCheck != rowClicked))
+        return ((rowCheck != columnClicked) || (columnCheck != rowClicked))
                 && ((rowCheck != columnClicked) || (columnCheck + 1 != rowClicked))
                 && ((rowCheck != columnClicked) || (columnCheck + 2 != rowClicked))
                 && ((rowCheck + 1 != columnClicked) || (columnCheck != rowClicked))
@@ -722,11 +719,7 @@ public class Game extends Activity {
                 && ((rowCheck + 1 != columnClicked) || (columnCheck + 2 != rowClicked))
                 && ((rowCheck + 2 != columnClicked) || (columnCheck != rowClicked))
                 && ((rowCheck + 2 != columnClicked) || (columnCheck + 1 != rowClicked))
-                && ((rowCheck + 2 != columnClicked) || (columnCheck + 2 != rowClicked))) {
-            return true;
-        } else {
-            return false;
-        }
+                && ((rowCheck + 2 != columnClicked) || (columnCheck + 2 != rowClicked));
     }
 
     /*
@@ -744,7 +737,7 @@ public class Game extends Activity {
      */
     private boolean isTreasureNear(int rowCheck, int columnCheck,
                                    int rowClicked, int columnClicked) {
-        if (((rowCheck != columnClicked) || (columnCheck - 1 != rowClicked))
+        return ((rowCheck != columnClicked) || (columnCheck - 1 != rowClicked))
                 && ((rowCheck != columnClicked) || (columnCheck != rowClicked))
                 && ((rowCheck != columnClicked) || (columnCheck + 1 != rowClicked))
                 && ((rowCheck != columnClicked) || (columnCheck + 2 != rowClicked))
@@ -758,11 +751,7 @@ public class Game extends Activity {
                 && ((rowCheck + 2 != columnClicked) || (columnCheck != rowClicked))
                 && ((rowCheck + 2 != columnClicked) || (columnCheck + 1 != rowClicked))
                 && ((rowCheck + 2 != columnClicked) || (columnCheck + 2 != rowClicked))
-                && ((rowCheck + 2 != columnClicked) || (columnCheck + 3 != rowClicked))) {
-            return true;
-        } else {
-            return false;
-        }
+                && ((rowCheck + 2 != columnClicked) || (columnCheck + 3 != rowClicked));
     }
 
     /*
@@ -786,7 +775,7 @@ public class Game extends Activity {
         }
 
         cells[rowClicked][columnClicked].OpenCell();
-        if (cells[rowClicked][columnClicked].getNumberOfTrapsInSurrounding() != 0) {
+        if (cells[rowClicked][columnClicked].getSurroundTraps() != 0) {
             return;
         }
 
@@ -825,7 +814,7 @@ public class Game extends Activity {
         isGameStart = false;
         trapsRemain = 0;
         totalScore += 1000;
-        scoreText.setText("" + totalScore);
+        scoreText.setText(String.format("%d", totalScore));
 
         // disable all buttons
         // set flagged all un-flagged blocks
@@ -836,7 +825,7 @@ public class Game extends Activity {
                     cells[row][column].setTrapIcon(true);
                 }
                 if (cells[row][column].hasTreasure())
-                    cells[row][column].setTreasureIcon(true);
+                    cells[row][column].setTreasureIcon();
             }
         }
 
@@ -877,16 +866,15 @@ public class Game extends Activity {
             popup.setContentView(R.layout.win_popup);
             // Set dialog title
 
-            // popup.setTitle("Say something");
             popup.setCancelable(false);
 
             finalScoreText = (TextView) popup.findViewById(R.id.finalScore);
             finalScoreText.setTypeface(font);
-            finalScoreText.setText("" + totalScore);
+            finalScoreText.setText(totalScore);
 
             finalTimeText = (TextView) popup.findViewById(R.id.finalTime);
             finalTimeText.setTypeface(font);
-            finalTimeText.setText("" + timer);
+            finalTimeText.setText(timer);
 
             popup.dismiss();
             popup.show();
@@ -1002,7 +990,6 @@ public class Game extends Activity {
         for (int row = 1; row < numberOfRows + 1; row++) {
             for (int column = 1; column < numberOfColumns + 1; column++) {
                 // disable block
-                // cells[row][column].setCellAsDisabled(false);
                 cells[row][column].disableCell();
 
                 // block has trap and is not flagged
@@ -1016,7 +1003,7 @@ public class Game extends Activity {
                 if (!cells[row][column].hasTrap()
                         && cells[row][column].isFlagged()) {
                     // set flag icon
-                    cells[row][column].setFlagIcon(false);
+                    cells[row][column].setFlagIcon();
                 }
 
                 // block is flagged
@@ -1028,7 +1015,7 @@ public class Game extends Activity {
                 // set treasure icon
                 if (cells[row][column].hasTreasure()) {
                     // set treasure icon
-                    cells[row][column].setTreasureIcon(false);
+                    cells[row][column].setTreasureIcon();
                 }
             }
         }
@@ -1213,14 +1200,12 @@ public class Game extends Activity {
 
                 } else {
                     // no existing scores
-                    scoreEdit.putString("highScores", "" + playerName + " - "
-                            + score + " - " + level);
+                    scoreEdit.putString("highScores", String.format("%s - %d - %d", playerName, score, level));
                     scoreEdit.commit();
                 }
 
             }
         } catch (NumberFormatException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -1237,13 +1222,12 @@ public class Game extends Activity {
      * @author: 8B Pham Hung Cuong
      */
     public void startTimer() {
-        clock.removeCallbacks(updateTimeElasped);
-        clock.postDelayed(updateTimeElasped, 1000);
+        clock.removeCallbacks(updateTimeElapsed);
+        clock.postDelayed(updateTimeElapsed, 1000);
     }
 
     public void stopTimer() {
-        // disable call backs
-        clock.removeCallbacks(updateTimeElasped);
+        clock.removeCallbacks(updateTimeElapsed);
     }
 
     /*
@@ -1260,8 +1244,7 @@ public class Game extends Activity {
     private void saveGameState(int _level, int _score, int _lives) {
         SharedPreferences.Editor gameStateEdit = gamePrefs.edit();
 
-        gameStateEdit.putString("saveGame", _level + " - " + _score + " - "
-                + _lives);
+        gameStateEdit.putString("saveGame", String.format("%d - %d - %d", _level, _score, _lives));
         gameStateEdit.commit();
     }
 

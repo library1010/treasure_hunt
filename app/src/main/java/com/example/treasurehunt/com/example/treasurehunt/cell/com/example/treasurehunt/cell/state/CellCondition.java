@@ -7,4 +7,5 @@ package com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treas
 public enum CellCondition {
     COVER,
     OPEN,
+    END_GAME,
 }

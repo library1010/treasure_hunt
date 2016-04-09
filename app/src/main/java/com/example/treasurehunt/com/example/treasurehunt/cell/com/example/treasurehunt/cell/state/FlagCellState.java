@@ -5,6 +5,16 @@ package com.example.treasurehunt.com.example.treasurehunt.cell.com.example.treas
  */
 public class FlagCellState implements CellStateTransition {
     @Override
+    public boolean isFlagged() {
+        return true;
+    }
+
+    @Override
+    public boolean isDoubt() {
+        return false;
+    }
+
+    @Override
     public void nextState(CellStateTransitionHandle cell) {
         cell.setCellState(new DoubtCellState());
     }

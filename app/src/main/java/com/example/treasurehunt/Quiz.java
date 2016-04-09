@@ -244,7 +244,6 @@ public class Quiz extends Activity {
         for (int row = 0; row < numberOfRows + 2; row++) {
             for (int column = 0; column < numberOfColumns + 2; column++) {
                 cells[row][column] = new Cell(this);
-                cells[row][column].setDefaults();
 
                 final int currentRow = row;
                 final int currentColumn = column;
@@ -674,7 +673,7 @@ public class Quiz extends Activity {
 
         for (int row = 0; row < numberOfRows + 2; row++) {
             for (int column = 0; column < numberOfColumns + 2; column++) {
-                if (cells[row][column].getNumberOfTrapsInSurrounding() == 0) {
+                if (cells[row][column].getSurroundTraps() == 0) {
                     rippleUncover(row, column);
                     return;
                 }
@@ -732,12 +731,12 @@ public class Quiz extends Activity {
                         }
                     }
                     cells[row][column]
-                            .setNumberOfTrapsInSurrounding(nearByTrapCount);
+                            .setSurroundTraps(nearByTrapCount);
                 }
                 // for side rows (0th and last row/column)
                 // set count as 9 and mark it as opened
                 else {
-                    cells[row][column].setNumberOfTrapsInSurrounding(9);
+                    cells[row][column].setSurroundTraps(9);
                     cells[row][column].OpenCell();
                 }
 
@@ -764,7 +763,7 @@ public class Quiz extends Activity {
         }
 
         cells[rowClicked][columnClicked].OpenCell();
-        if (cells[rowClicked][columnClicked].getNumberOfTrapsInSurrounding() != 0) {
+        if (cells[rowClicked][columnClicked].getSurroundTraps() != 0) {
             return;
         }
 
